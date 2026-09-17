@@ -1,5 +1,8 @@
 # HammerFreedom
 
+Snapshot builds use LandoriaModActions@v4.3 and the shared private references.
+Requires MOD_REFERENCES_TOKEN. Runs on main only when both versions match X.Y.Z-snapshot.
+
 Lets players build freely in authorized Hammer worlds with flight, unlimited stamina,
 fall protection, and lasting equipment—without granting administrator access.
 
