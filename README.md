@@ -47,5 +47,3 @@ Most of Landoria mods need to be installed also on the dedicated server, we show
 
 Report bugs through [GitHub Issues](https://github.com/landoria-gaming/Landoria.HammerFreedom/issues).
 For questions, feedback, and other discussions, use [GitHub Discussions](https://github.com/landoria-gaming/Landoria.HammerFreedom/discussions).
-
-All Landoria mods are used on the [Landoria Valheim public servers](https://valheim.landoria-gaming.com/).
