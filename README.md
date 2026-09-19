@@ -1,17 +1,11 @@
 # HammerFreedom
 
-Requires MOD_REFERENCES_TOKEN. All five versions must match; only manifest and informational version use -snapshot.
-
 Lets players build freely in authorized Hammer worlds with flight, unlimited stamina,
 fall protection, and lasting equipment—without granting administrator access.
 
 ## Video demo
 
 [Watch HammerFreedom's Fly mode in action on YouTube](https://youtu.be/wUBgHzN5hG8).
-
-## Valheim compatibility
-
-Current release: 1.0.x
 
 ## Features
 
