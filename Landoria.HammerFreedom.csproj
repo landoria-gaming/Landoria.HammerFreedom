@@ -30,17 +30,25 @@
     <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FlyCommand.cs" />
-    <Compile Include="FlyController.cs" /><Compile Include="FlyInput.cs" />
-    <Compile Include="FlightGroundActionPolicy.cs" />
-    <Compile Include="FlightSpeedPolicy.cs" />
-    <Compile Include="HammerFreedomAuthorization.cs" />
-    <Compile Include="HammerFreedomArgumentPolicy.cs" />
-    <Compile Include="HammerFreedomBehaviorPolicy.cs" />
-    <Compile Include="HammerFreedomCapabilities.cs" />
-    <Compile Include="HammerFreedomPatches.cs" /><Compile Include="HammerFreedomPlugin.cs" />
-    <Compile Include="HammerFreedomSettings.cs" />
-    <Compile Include="ServerRole.cs" />
+    <Compile Include="Durability\ArmorDurabilityPatch.cs" />
+    <Compile Include="Durability\AttackDurabilityPatch.cs" />
+    <Compile Include="Durability\BlockDurabilityPatch.cs" />
+    <Compile Include="Durability\DurabilityProtection.cs" />
+    <Compile Include="Durability\DurabilitySnapshot.cs" />
+    <Compile Include="Durability\EquippedDurabilityPatch.cs" />
+    <Compile Include="Fall\FallDamagePatch.cs" />
+    <Compile Include="Fly\FlightSpeedPatch.cs" />
+    <Compile Include="Fly\FlyCommand.cs" />
+    <Compile Include="Fly\FlyCommandRegistrationPatch.cs" />
+    <Compile Include="Fly\FlyCommandValidationPatch.cs" />
+    <Compile Include="Fly\FlyController.cs" /><Compile Include="Fly\FlyInput.cs" />
+    <Compile Include="Fly\FlyingCrouchPatch.cs" />
+    <Compile Include="Fly\FlyingJumpPatch.cs" />
+    <Compile Include="Mode.cs" />
+    <Compile Include="Durability\PlacementDurabilityPatch.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Stamina\StaminaApplicationPatch.cs" />
+    <Compile Include="Stamina\StaminaConsumptionPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

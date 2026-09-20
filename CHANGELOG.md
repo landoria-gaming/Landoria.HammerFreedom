@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.10
+
+- Removed server dependency, the mod is client only now
+
 ## 1.0.9
 
 - Migration to Valheim 1.0.x.

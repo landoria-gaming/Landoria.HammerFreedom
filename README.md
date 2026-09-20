@@ -1,44 +1,33 @@
 # HammerFreedom
 
-Lets players build freely in authorized Hammer worlds with flight, unlimited stamina,
-fall protection, and lasting equipment—without granting administrator access.
+Build without limits in Valheim Hammer worlds.
 
-## Video demo
+HammerFreedom activates automatically when you join a world using the **Hammer** preset. It gives you:
 
-[Watch HammerFreedom's Fly mode in action on YouTube](https://youtu.be/wUBgHzN5hG8).
+- Unlimited stamina.
+- No fall damage.
+- No equipment durability loss.
+- Safe, speed-limited flight without admin access.
 
-## Features
+## Flight controls
 
-- Makes every creative ability available only when the connected server authorizes it.
-- Provides separate `--hammerfreedom-fly`, `--hammerfreedom-fall-damage-immunity`, and
-  `--hammerfreedom-unlimited-stamina` server switches, plus
-  `--hammerfreedom-no-durability-loss`; each is disabled by default.
-- Works only in worlds using the required Hammer modifiers.
-- Prevents all fall damage, regardless of fall height, when authorized.
-- Prevents all stamina use when authorized, regardless of the action.
-- Prevents durability loss for tools, weapons, shields, armor, and other durable equipment.
-- Removes these creative abilities when moving to a server that does not authorize them.
-- Shows the `fly` command only when it is available.
-- Supports `fly`, `fly on`, `fly off`, and the fixed native `Z` toggle shortcut.
-- Limits flight to 4 metres per second normally and 7 metres per second while sprinting.
-- Keeps vanilla movement: Space ascends, Left Control descends, and Shift increases speed.
-- Prevents Space from jumping and Left Control from crouching while flying.
+| Control | Action |
+|---|---|
+| `Z` | Toggle flight |
+| `Space` | Fly up |
+| `Left Control` | Fly down |
+| `Shift` | Fly faster |
+
+You can also use `fly`, `fly on`, or `fly off` in the console.
+
+[Watch flight in action on YouTube](https://youtu.be/wUBgHzN5hG8).
 
 ## Installation
 
-Most of Landoria mods need to be installed also on the dedicated server, we show you in this video how to do it on windows:
+Install HammerFreedom on your client. The server does not need the mod.
 
-[Setup a Valheim Modded dedicated server on Windows](https://youtu.be/X5J1wSRr7Uo)
+The features turn off automatically outside Hammer worlds.
 
-| Crossplay support | Steam network support |
-|---|---
-| Yes | No
-
-| Client required | Server required (dedicated) | Player-hosted server |
-|---|---|---|
-| Yes | Yes | Not Supported |
-
-
-## Contact
+## Support
 
 Report bugs through [GitHub Issues](https://github.com/landoria-gaming/Landoria.HammerFreedom/issues).

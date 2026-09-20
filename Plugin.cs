@@ -5,25 +5,22 @@ using HarmonyLib;
 
 namespace Landoria.HammerFreedom
 {
+    // Loads and unloads the HammerFreedom client features.
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
-    public sealed class HammerFreedomPlugin : BaseUnityPlugin
+    public sealed class Plugin : BaseUnityPlugin
     {
         internal const string PluginGuid = "Landoria.HammerFreedom";
         internal const string PluginName = "Landoria.HammerFreedom";
-        internal const string PluginVersion = "1.0.9";
+        internal const string PluginVersion = "1.0.10";
         private static readonly KeyboardShortcut ToggleShortcut =
             new KeyboardShortcut(UnityEngine.KeyCode.Z);
 
         internal static ManualLogSource ModLogger { get; private set; }
-        internal static HammerFreedomSettings Settings { get; private set; }
-        private static bool settingsInitialized;
-
-
         private Harmony _harmony;
 
-        private void RegisterPatches0()
+        // Applies every Harmony patch used by the mod.
+        private void RegisterPatches()
         {
-            _harmony.CreateClassProcessor(typeof(HammerFreedomAuthorizationOnSpawnPatch)).Patch();
             _harmony.CreateClassProcessor(typeof(FlyCommandRegistrationPatch)).Patch();
             _harmony.CreateClassProcessor(typeof(FlyCommandValidationPatch)).Patch();
             _harmony.CreateClassProcessor(typeof(FallDamagePatch)).Patch();
@@ -37,34 +34,27 @@ namespace Landoria.HammerFreedom
             _harmony.CreateClassProcessor(typeof(FlightSpeedPatch)).Patch();
             _harmony.CreateClassProcessor(typeof(FlyingJumpPatch)).Patch();
             _harmony.CreateClassProcessor(typeof(FlyingCrouchPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(HammerFreedomDisconnectPatch)).Patch();
         }
 
+        // Initializes commands and patches when the plugin loads.
         private void Awake()
         {
             ModLogger = Logger;
             Logger.LogInfo($"AssemblyVersion: {GetType().Assembly.GetName().Version}.");
             _harmony = new Harmony(PluginGuid);
-            RegisterPatches0();
-            Settings = new HammerFreedomSettings();
+            RegisterPatches();
             FlyCommand.Register();
             ModLogger.LogInfo($"{PluginName} {PluginVersion} is loaded.");
         }
 
-        internal static void InitializeDedicatedServerSettings()
-        {
-            if (settingsInitialized || !ServerRole.IsDedicatedServer) return;
-            Settings = HammerFreedomSettings.FromArguments(
-                System.Environment.GetCommandLineArgs(), ModLogger);
-            settingsInitialized = true;
-        }
-
+        // Updates world state and handles the flight shortcut.
         private void Update()
         {
-            HammerFreedomAuthorization.Update();
+            Mode.Update();
             HandleShortcuts();
         }
 
+        // Toggles flight when the shortcut is available.
         private void HandleShortcuts()
         {
             if (!FlyInput.IsAvailable())
@@ -78,14 +68,12 @@ namespace Landoria.HammerFreedom
             }
         }
 
+        // Removes patches and clears shared state when the plugin unloads.
         private void OnDestroy()
         {
-            HammerFreedomAuthorization.ResetSession();
             ModLogger?.LogInfo($"{PluginName} {PluginVersion} is unloaded.");
             _harmony?.UnpatchSelf();
             _harmony = null;
-            Settings = null;
-            settingsInitialized = false;
             ModLogger = null;
         }
     }
