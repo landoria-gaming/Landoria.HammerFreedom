@@ -18,31 +18,13 @@ namespace Landoria.HammerFreedom
         internal static ManualLogSource ModLogger { get; private set; }
         private Harmony _harmony;
 
-        // Applies every Harmony patch used by the mod.
-        private void RegisterPatches()
-        {
-            _harmony.CreateClassProcessor(typeof(FlyCommandRegistrationPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(FlyCommandValidationPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(FallDamagePatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(StaminaConsumptionPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(StaminaApplicationPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(AttackDurabilityPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(PlacementDurabilityPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(BlockDurabilityPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(EquippedDurabilityPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(ArmorDurabilityPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(FlightSpeedPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(FlyingJumpPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(FlyingCrouchPatch)).Patch();
-        }
-
         // Initializes commands and patches when the plugin loads.
         private void Awake()
         {
             ModLogger = Logger;
             Logger.LogInfo($"AssemblyVersion: {GetType().Assembly.GetName().Version}.");
             _harmony = new Harmony(PluginGuid);
-            RegisterPatches();
+            _harmony.PatchAll();
             FlyCommand.Register();
             ModLogger.LogInfo($"{PluginName} {PluginVersion} is loaded.");
         }
