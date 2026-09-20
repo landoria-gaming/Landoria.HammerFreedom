@@ -1,9 +1,5 @@
 # Changelog
 
-## 1.0.11
-
-- Prevented cold and freezing messages in Hammer worlds.
-- Applied the Shift speed boost when flying straight up or down.
 
 ## 1.0.10
 

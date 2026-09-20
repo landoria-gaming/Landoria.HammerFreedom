@@ -11,7 +11,7 @@ namespace Landoria.HammerFreedom
     {
         internal const string PluginGuid = "Landoria.HammerFreedom";
         internal const string PluginName = "Landoria.HammerFreedom";
-        internal const string PluginVersion = "1.0.11";
+        internal const string PluginVersion = "1.0.10";
         internal static ManualLogSource ModLogger { get; private set; }
         private Harmony _harmony;
 
