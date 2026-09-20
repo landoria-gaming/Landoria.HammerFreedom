@@ -38,10 +38,12 @@
     <Compile Include="Durability\EquippedDurabilityPatch.cs" />
     <Compile Include="Fall\FallDamagePatch.cs" />
     <Compile Include="Fly\FlightScrollSpeedPatch.cs" />
-    <Compile Include="Fly\FlightSpeedPatch.cs" />
+    <Compile Include="Fly\FlightMovementPatch.cs" />
     <Compile Include="Fly\FlyController.cs" /><Compile Include="Fly\FlyInput.cs" />
     <Compile Include="Fly\FlyingCrouchPatch.cs" />
     <Compile Include="Fly\FlyingJumpPatch.cs" />
+    <Compile Include="Fly\VisibilityController.cs" />
+    <Compile Include="Fly\VisualVisibilityPatch.cs" />
     <Compile Include="Mode.cs" />
     <Compile Include="Durability\PlacementDurabilityPatch.cs" />
     <Compile Include="Preference.cs" />

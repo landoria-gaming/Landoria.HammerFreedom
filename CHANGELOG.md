@@ -6,6 +6,8 @@
 - Made the flight shortcut configurable, with `Z` as the default.
 - Added configurable flight speed with a fixed `x2` Shift boost.
 - Prevented the debug camera shortcut from changing flight speed.
+- Made flight movement follow the camera direction like FreeFly.
+- Added an enabled-by-default setting to hide the character and held item while flying.
 - Removed the player console commands for flight.
 
 ## 1.0.9

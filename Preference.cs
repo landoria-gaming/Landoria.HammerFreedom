@@ -7,14 +7,17 @@ namespace Landoria.HammerFreedom
     internal static class Preference
     {
         internal const float DefaultFlightSpeed = 5f;
+        internal const bool DefaultHideCharacterWhileFlying = true;
         private const float MinimumFlightSpeed = 1f;
-        private const float MaximumFlightSpeed = 10f;
+        private const float MaximumFlightSpeed = 20f;
 
         private static ConfigEntry<KeyboardShortcut> toggleShortcut;
         private static ConfigEntry<float> flightSpeed;
+        private static ConfigEntry<bool> hideCharacterWhileFlying;
 
         internal static KeyboardShortcut ToggleShortcut => toggleShortcut.Value;
         internal static float FlightSpeed => flightSpeed.Value;
+        internal static bool HideCharacterWhileFlying => hideCharacterWhileFlying.Value;
 
         // Creates the saved configuration entries used by the mod.
         internal static void Initialize(ConfigFile config)
@@ -34,6 +37,9 @@ namespace Landoria.HammerFreedom
                     "Maximum flight speed in metres per second.",
                     new AcceptableValueRange<float>(
                         MinimumFlightSpeed, MaximumFlightSpeed)));
+            hideCharacterWhileFlying = config.Bind(
+                "Flight", "HideCharacter", DefaultHideCharacterWhileFlying,
+                "Hide your character and held item while flying.");
         }
 
         // Restores the default shortcut and recreates the configuration file.
@@ -41,6 +47,7 @@ namespace Landoria.HammerFreedom
         {
             toggleShortcut.Value = new KeyboardShortcut(UnityEngine.KeyCode.Z);
             flightSpeed.Value = DefaultFlightSpeed;
+            hideCharacterWhileFlying.Value = DefaultHideCharacterWhileFlying;
             config.Save();
             ConfigWatcher.IgnoreCurrentFileVersion();
         }

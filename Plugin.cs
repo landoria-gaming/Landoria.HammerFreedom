@@ -37,6 +37,16 @@ namespace Landoria.HammerFreedom
             ConfigWatcher.Update();
             Mode.Update();
             HandleShortcuts();
+            UpdatePlayerVisibility();
+        }
+
+        // Hides the local player while Hammer flight is active.
+        private static void UpdatePlayerVisibility()
+        {
+            Player player = Player.m_localPlayer;
+            bool hidden = Preference.HideCharacterWhileFlying &&
+                player && Mode.IsHammer() && player.IsDebugFlying();
+            VisibilityController.SetHidden(player, hidden);
         }
 
         // Toggles flight when the shortcut is available.
@@ -56,6 +66,7 @@ namespace Landoria.HammerFreedom
         // Removes patches and clears shared state when the plugin unloads.
         private void OnDestroy()
         {
+            VisibilityController.Restore();
             ConfigWatcher.Dispose();
             ModLogger?.LogInfo($"{PluginName} {PluginVersion} is unloaded.");
             _harmony?.UnpatchSelf();
