@@ -9,16 +9,30 @@ namespace Landoria.HammerFreedom
         private static readonly HashSet<Renderer> HiddenRenderers =
             new HashSet<Renderer>();
         private static Player hiddenPlayer;
+        private static bool wasAirborne;
 
-        // Applies the visibility required by the current flight state.
-        internal static void SetHidden(Player player, bool hidden)
+        // Updates visibility while flying and until the player lands.
+        internal static void Update(Player player, bool enabled, bool flying)
         {
-            if (!hidden || !player)
+            if (!enabled || !player)
             {
                 Restore();
                 return;
             }
 
+            if (flying)
+            {
+                wasAirborne |= !player.IsOnGround();
+                SetHidden(player);
+                return;
+            }
+
+            RestoreAfterLanding(player);
+        }
+
+        // Hides the requested player's current visuals.
+        private static void SetHidden(Player player)
+        {
             if (hiddenPlayer != player)
             {
                 Restore();
@@ -49,6 +63,27 @@ namespace Landoria.HammerFreedom
 
             HiddenRenderers.Clear();
             hiddenPlayer = null;
+            wasAirborne = false;
+        }
+
+        // Restores the player after flight has ended and the ground is reached.
+        private static void RestoreAfterLanding(Player player)
+        {
+            if (hiddenPlayer != player)
+            {
+                return;
+            }
+
+            if (!player.IsOnGround())
+            {
+                wasAirborne = true;
+                return;
+            }
+
+            if (wasAirborne)
+            {
+                Restore();
+            }
         }
 
         // Hides the body and every equipped item under the player hierarchy.
@@ -62,6 +97,7 @@ namespace Landoria.HammerFreedom
                     HiddenRenderers.Add(renderer);
                 }
             }
+
         }
     }
 }

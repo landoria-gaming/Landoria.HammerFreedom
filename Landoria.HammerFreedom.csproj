@@ -30,6 +30,8 @@
     <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cold\ColdStatusPatch.cs" />
+    <Compile Include="Cold\FrostDamagePatch.cs" />
     <Compile Include="Durability\ArmorDurabilityPatch.cs" />
     <Compile Include="Durability\AttackDurabilityPatch.cs" />
     <Compile Include="Durability\BlockDurabilityPatch.cs" />
@@ -38,7 +40,7 @@
     <Compile Include="Durability\EquippedDurabilityPatch.cs" />
     <Compile Include="Fall\FallDamagePatch.cs" />
     <Compile Include="Fly\FlightScrollSpeedPatch.cs" />
-    <Compile Include="Fly\FlightMovementPatch.cs" />
+    <Compile Include="Fly\FlightSpeedPatch.cs" />
     <Compile Include="Fly\FlyController.cs" /><Compile Include="Fly\FlyInput.cs" />
     <Compile Include="Fly\FlyingCrouchPatch.cs" />
     <Compile Include="Fly\FlyingJumpPatch.cs" />

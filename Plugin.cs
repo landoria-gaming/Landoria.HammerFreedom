@@ -40,13 +40,13 @@ namespace Landoria.HammerFreedom
             UpdatePlayerVisibility();
         }
 
-        // Hides the local player while Hammer flight is active.
+        // Hides the local player during flight and until landing.
         private static void UpdatePlayerVisibility()
         {
             Player player = Player.m_localPlayer;
-            bool hidden = Preference.HideCharacterWhileFlying &&
-                player && Mode.IsHammer() && player.IsDebugFlying();
-            VisibilityController.SetHidden(player, hidden);
+            bool enabled = Preference.HideCharacterWhileFlying && Mode.IsHammer();
+            bool flying = player && player.IsDebugFlying();
+            VisibilityController.Update(player, enabled, flying);
         }
 
         // Toggles flight when the shortcut is available.

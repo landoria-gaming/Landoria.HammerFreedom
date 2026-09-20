@@ -1,8 +1,12 @@
+using UnityEngine;
+
 namespace Landoria.HammerFreedom
 {
     // Controls debug flight for the local player.
     internal static class FlyController
     {
+        private const float InitialLift = 5f;
+
         // Toggles the current local flight state.
         internal static void Toggle()
         {
@@ -25,7 +29,25 @@ namespace Landoria.HammerFreedom
             if (player.IsDebugFlying() != enabled)
             {
                 player.ToggleDebugFly();
+                if (enabled)
+                {
+                    Lift(player);
+                }
             }
+        }
+
+        // Moves the player clear of the ground when flight starts.
+        private static void Lift(Player player)
+        {
+            Vector3 position = player.transform.position + Vector3.up * InitialLift;
+            Rigidbody body = player.GetComponent<Rigidbody>();
+            if (body)
+            {
+                body.position = position;
+                body.linearVelocity = Vector3.zero;
+            }
+
+            player.transform.position = position;
         }
     }
 }

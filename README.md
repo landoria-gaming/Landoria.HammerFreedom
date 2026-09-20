@@ -6,9 +6,9 @@ HammerFreedom activates automatically when you join a world using the **Hammer**
 
 - Unlimited stamina.
 - No fall damage.
+- No cold, freezing, or frost damage.
 - No equipment durability loss.
 - Safe, speed-limited flight without admin access.
-- Flight movement follows the camera direction, like FreeFly.
 - Your character and held item are hidden while flying by default.
 
 ## Flight controls
@@ -20,9 +20,15 @@ HammerFreedom activates automatically when you join a world using the **Hammer**
 | `Left Control` | Fly down |
 | `Shift` | Fly faster |
 
-Change the toggle shortcut in `BepInEx/config/Landoria.HammerFreedom.cfg`.
-You can also configure flight speed in the same file. Holding Shift doubles it.
-Set `HideCharacter` to `false` there if you want to remain visible while flying.
+## BepInEx configuration
+
+Settings are stored in `BepInEx/config/Landoria.HammerFreedom.cfg`.
+
+| Section | Setting | Default | Description |
+|---|---|---|---|
+| `Controls` | `ToggleShortcut` | `Z` | Shortcut used to toggle flight. On QWERTZ keyboards, use `Y` for the physical Z key. |
+| `Flight` | `Speed` | `5` | Flight speed in metres per second, from `1` to `20`. Holding Shift doubles it. |
+| `Flight` | `HideCharacter` | `true` | Hides your character and held item while flying and restores them after landing. |
 
 [Watch flight in action on YouTube](https://youtu.be/wUBgHzN5hG8).
 
