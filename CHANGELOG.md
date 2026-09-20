@@ -4,11 +4,9 @@
 
 - Removed the server dependency; the mod is now client-only.
 - Made the flight shortcut configurable, with `Z` as the default.
+- Limited configured flight speed to `10` and increased the Shift boost to `x4`.
 - Added an enabled-by-default setting to hide the character and held item while flying.
-- Added an automatic 5-metre lift when flight is enabled.
-- Locked the camera at its closest distance while flying.
 - Prevented frost damage in Hammer worlds.
-- Prevented environmental cold and freezing statuses in Hammer worlds.
 
 ## 1.0.9
 

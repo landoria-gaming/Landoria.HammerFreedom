@@ -9,7 +9,7 @@ namespace Landoria.HammerFreedom
         internal const float DefaultFlightSpeed = 5f;
         internal const bool DefaultHideCharacterWhileFlying = true;
         private const float MinimumFlightSpeed = 1f;
-        private const float MaximumFlightSpeed = 20f;
+        private const float MaximumFlightSpeed = 10f;
 
         private static ConfigEntry<KeyboardShortcut> toggleShortcut;
         private static ConfigEntry<float> flightSpeed;

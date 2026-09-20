@@ -28,7 +28,7 @@ Settings are stored in `BepInEx/config/Landoria.HammerFreedom.cfg`.
 | Section | Setting | Default | Description |
 |---|---|---|---|
 | `Controls` | `ToggleShortcut` | `Z` | Shortcut used to toggle flight. On QWERTZ keyboards, use `Y` for the physical Z key. |
-| `Flight` | `Speed` | `5` | Flight speed in metres per second, from `1` to `20`. Holding Shift doubles it. |
+| `Flight` | `Speed` | `5` | Flight speed in metres per second, from `1` to `10`. Holding Shift multiplies it by `4`. |
 | `Flight` | `HideCharacter` | `true` | Hides your character and held item while flying and restores them after landing. |
 
 [Watch flight in action on YouTube](https://youtu.be/wUBgHzN5hG8).
