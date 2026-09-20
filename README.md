@@ -30,7 +30,7 @@ Settings are stored in `BepInEx/config/Landoria.HammerFreedom.cfg`.
 | `Flight` | `Speed` | `5` | Flight speed in metres per second, from `1` to `10`. Holding Shift multiplies it by `4`. |
 | `Flight` | `HideCharacter` | `true` | Hides your character and held item while flying and restores them after landing. |
 
-[Watch flight in action on YouTube](https://youtu.be/wUBgHzN5hG8).
+[Watch flight in action on YouTube](https://youtu.be/pYAe5MPeTZY).
 
 ## Installation
 
