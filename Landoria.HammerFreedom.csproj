@@ -41,6 +41,7 @@
     <Compile Include="Fall\FallDamagePatch.cs" />
     <Compile Include="Fly\FlightScrollSpeedPatch.cs" />
     <Compile Include="Fly\FlightSpeedPatch.cs" />
+    <Compile Include="Fly\FlightZoomPatch.cs" />
     <Compile Include="Fly\FlyController.cs" /><Compile Include="Fly\FlyInput.cs" />
     <Compile Include="Fly\FlyingCrouchPatch.cs" />
     <Compile Include="Fly\FlyingJumpPatch.cs" />
