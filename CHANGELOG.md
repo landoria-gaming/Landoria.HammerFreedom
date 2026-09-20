@@ -2,7 +2,9 @@
 
 ## 1.0.10
 
-- Removed server dependency, the mod is client only now
+- Removed the server dependency; the mod is now client-only.
+- Made the flight shortcut configurable, with `Z` as the default.
+- Removed the player console commands for flight.
 
 ## 1.0.9
 

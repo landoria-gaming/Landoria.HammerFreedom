@@ -38,14 +38,12 @@
     <Compile Include="Durability\EquippedDurabilityPatch.cs" />
     <Compile Include="Fall\FallDamagePatch.cs" />
     <Compile Include="Fly\FlightSpeedPatch.cs" />
-    <Compile Include="Fly\FlyCommand.cs" />
-    <Compile Include="Fly\FlyCommandRegistrationPatch.cs" />
-    <Compile Include="Fly\FlyCommandValidationPatch.cs" />
     <Compile Include="Fly\FlyController.cs" /><Compile Include="Fly\FlyInput.cs" />
     <Compile Include="Fly\FlyingCrouchPatch.cs" />
     <Compile Include="Fly\FlyingJumpPatch.cs" />
     <Compile Include="Mode.cs" />
     <Compile Include="Durability\PlacementDurabilityPatch.cs" />
+    <Compile Include="Preference.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Stamina\StaminaApplicationPatch.cs" />
     <Compile Include="Stamina\StaminaConsumptionPatch.cs" />
@@ -56,5 +54,6 @@
     <Content Include="README.md" />
     <Content Include="CHANGELOG.md" />
   </ItemGroup>
+  <Import Project="..\Landoria.CodeSnippets\Landoria.CodeSnippets.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

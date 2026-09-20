@@ -1,7 +1,7 @@
 using BepInEx;
-using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
+using Landoria.Shared;
 
 namespace Landoria.HammerFreedom
 {
@@ -12,9 +12,6 @@ namespace Landoria.HammerFreedom
         internal const string PluginGuid = "Landoria.HammerFreedom";
         internal const string PluginName = "Landoria.HammerFreedom";
         internal const string PluginVersion = "1.0.10";
-        private static readonly KeyboardShortcut ToggleShortcut =
-            new KeyboardShortcut(UnityEngine.KeyCode.Z);
-
         internal static ManualLogSource ModLogger { get; private set; }
         private Harmony _harmony;
 
@@ -25,13 +22,19 @@ namespace Landoria.HammerFreedom
             Logger.LogInfo($"AssemblyVersion: {GetType().Assembly.GetName().Version}.");
             _harmony = new Harmony(PluginGuid);
             _harmony.PatchAll();
-            FlyCommand.Register();
+            Preference.Initialize(Config);
+            ConfigWatcher.Initialize(
+                Config,
+                Logger,
+                "Hammer Freedom",
+                () => Preference.RestoreDefaults(Config));
             ModLogger.LogInfo($"{PluginName} {PluginVersion} is loaded.");
         }
 
         // Updates world state and handles the flight shortcut.
         private void Update()
         {
+            ConfigWatcher.Update();
             Mode.Update();
             HandleShortcuts();
         }
@@ -44,7 +47,7 @@ namespace Landoria.HammerFreedom
                 return;
             }
 
-            if (ToggleShortcut.IsDown())
+            if (Preference.ToggleShortcut.IsDown())
             {
                 FlyController.Toggle();
             }
@@ -53,6 +56,7 @@ namespace Landoria.HammerFreedom
         // Removes patches and clears shared state when the plugin unloads.
         private void OnDestroy()
         {
+            ConfigWatcher.Dispose();
             ModLogger?.LogInfo($"{PluginName} {PluginVersion} is unloaded.");
             _harmony?.UnpatchSelf();
             _harmony = null;

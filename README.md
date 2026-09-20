@@ -13,20 +13,18 @@ HammerFreedom activates automatically when you join a world using the **Hammer**
 
 | Control | Action |
 |---|---|
-| `Z` | Toggle flight |
+| `Z` (configurable) | Toggle flight |
 | `Space` | Fly up |
 | `Left Control` | Fly down |
 | `Shift` | Fly faster |
 
-You can also use `fly`, `fly on`, or `fly off` in the console.
+Change the toggle shortcut in `BepInEx/config/Landoria.HammerFreedom.cfg`.
 
 [Watch flight in action on YouTube](https://youtu.be/wUBgHzN5hG8).
 
 ## Installation
 
 Install HammerFreedom on your client. The server does not need the mod.
-
-The features turn off automatically outside Hammer worlds.
 
 ## Support
 
