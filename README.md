@@ -8,8 +8,7 @@ HammerFreedom activates automatically when you join a world using the **Hammer**
 - No fall damage.
 - No cold, freezing, or frost damage.
 - No equipment durability loss.
-- Safe, speed-limited flight without admin access.
-- Closest camera distance while flying, with zoom controls locked.
+- Fly mode enabled without admin access, with configurable speed limits.
 - Your character and held item are hidden while flying by default.
 
 ## Flight controls
