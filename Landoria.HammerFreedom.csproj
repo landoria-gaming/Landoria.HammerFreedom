@@ -30,6 +30,7 @@
     <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cold\ColdStatusApplicationPatch.cs" />
     <Compile Include="Cold\ColdStatusPatch.cs" />
     <Compile Include="Cold\FrostDamagePatch.cs" />
     <Compile Include="Durability\ArmorDurabilityPatch.cs" />

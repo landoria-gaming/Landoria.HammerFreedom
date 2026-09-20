@@ -1,6 +1,6 @@
 {
   "name": "HammerFreedom",
-  "version_number": "1.0.10",
+  "version_number": "1.0.11",
   "website_url": "https://github.com/landoria-gaming/Landoria.HammerFreedom",
   "description": "Fly, build, and explore Hammer worlds without stamina, weather, fall damage, or durability limits.",
   "dependencies": [
