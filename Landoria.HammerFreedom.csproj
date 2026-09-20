@@ -37,6 +37,7 @@
     <Compile Include="Durability\DurabilitySnapshot.cs" />
     <Compile Include="Durability\EquippedDurabilityPatch.cs" />
     <Compile Include="Fall\FallDamagePatch.cs" />
+    <Compile Include="Fly\FlightScrollSpeedPatch.cs" />
     <Compile Include="Fly\FlightSpeedPatch.cs" />
     <Compile Include="Fly\FlyController.cs" /><Compile Include="Fly\FlyInput.cs" />
     <Compile Include="Fly\FlyingCrouchPatch.cs" />

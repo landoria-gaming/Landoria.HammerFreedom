@@ -19,6 +19,7 @@ HammerFreedom activates automatically when you join a world using the **Hammer**
 | `Shift` | Fly faster |
 
 Change the toggle shortcut in `BepInEx/config/Landoria.HammerFreedom.cfg`.
+You can also configure flight speed in the same file. Holding Shift doubles it.
 
 [Watch flight in action on YouTube](https://youtu.be/wUBgHzN5hG8).
 

@@ -4,6 +4,8 @@
 
 - Removed the server dependency; the mod is now client-only.
 - Made the flight shortcut configurable, with `Z` as the default.
+- Added configurable flight speed with a fixed `x2` Shift boost.
+- Prevented the debug camera shortcut from changing flight speed.
 - Removed the player console commands for flight.
 
 ## 1.0.9

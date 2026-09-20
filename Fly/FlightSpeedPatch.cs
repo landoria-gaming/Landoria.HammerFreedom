@@ -17,7 +17,7 @@ namespace Landoria.HammerFreedom
                 return;
             }
 
-            float maximumSpeed = ___m_run ? 7f : 4f;
+            float maximumSpeed = Preference.FlightSpeed * (___m_run ? 2f : 1f);
             float currentSpeed = ___m_currentVel.magnitude;
             float scale = currentSpeed > maximumSpeed ? maximumSpeed / currentSpeed : 1f;
             if (scale < 1f)
