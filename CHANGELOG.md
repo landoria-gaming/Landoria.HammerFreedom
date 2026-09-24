@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.11
+
+- Use latest BepInEx version 5.4.2351
 
 ## 1.0.10
 
