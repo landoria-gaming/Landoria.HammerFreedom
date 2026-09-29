@@ -31,7 +31,7 @@ Settings are stored in `BepInEx/config/Landoria.HammerFreedom.cfg`.
 | `Flight` | `HideCharacter` | `true` | Hides your character and held item while flying and restores them after landing. |
 
 <p align="left">
-  <a href="https://youtu.be/pYAe5MPeTZY"><img src="https://raw.githubusercontent.com/landoria-gaming/Landoria.HammerFreedom/main/assets/hammer-freedom.jpg" alt="HammerFreedom flight video demo" width="300"></a>
+  <a href="https://youtu.be/pYAe5MPeTZY"><img src="https://raw.githubusercontent.com/landoria-gaming/Landoria.HammerFreedom/main/assets/hammer-freedom.png" alt="HammerFreedom flight video demo" width="300"></a>
 </p>
 
 ## Installation
